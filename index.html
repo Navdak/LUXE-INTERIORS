@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE INTERIORS - Premium Furniture & Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B7355;
+            --primary-dark: #6B5A45;
+            --secondary: #F5F5F0;
+            --light: #FAFAF7;
+            --accent: #333333;
+            --text-light: #666666;
+            --text-lighter: #999999;
+            --white: #FFFFFF;
+            --border: #E5E5E0;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--accent);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .header-main {
+            padding: 20px 0;
+        }
+
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .header-icons a {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./imgs/img22.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: var(--white);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-luxury {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            padding: 16px 40px;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .btn-luxury:hover {
+            background-color: var(--white);
+            color: var(--accent);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Popular Categories */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .category-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5));
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .category-card:hover .category-overlay {
+            opacity: 1;
+        }
+
+        .category-overlay h3 {
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .category-overlay p {
+            color: var(--white);
+            margin-bottom: 0;
+        }
+
+        .category-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .category-info h3 {
+            margin-bottom: 5px;
+        }
+
+        /* Featured Collection */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-img {
+            height: 350px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
+        }
+
+        .product-info {
+            padding: 30px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .product-desc {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        /* Room Inspiration */
+        .inspiration-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .inspiration-card {
+            position: relative;
+            height: 500px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .inspiration-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .inspiration-card:hover .inspiration-img {
+            transform: scale(1.05);
+        }
+
+        .inspiration-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+            color: var(--white);
+        }
+
+        .inspiration-overlay h3 {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .inspiration-overlay p {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--secondary);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .testimonial-text::before {
+            content: "\201C";
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 3rem;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .newsletter h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            color: var(--white);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 2px 0 0 2px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 0 2px 2px 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-desc {
+            color: var(--border);
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--border);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--border);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .inspiration-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 600px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 2px;
+            }
+            
+            .newsletter-form button {
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .product-img {
+                height: 250px;
+            }
+            
+            .inspiration-card {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">LUXE INTERIORS</div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#inspiration">Inspiration</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="header-icons">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#"><i class="fas fa-shopping-bag"></i></a>
+                    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Timeless Elegance for Modern Living</h1>
+            <!-- <img src="."> -->
+            <p>Discover our curated collection of premium furniture that transforms spaces into works of art</p>
+            <a href="#featured" class="btn btn-luxury">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Popular Categories -->
+    <section id="categories" class="container">
+        <div class="section-header">
+            <h2>Popular Categories</h2>
+            <p>Explore our carefully curated furniture collections designed to elevate your living spaces</p>
+        </div>
+        <div class="categories">
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1600121848594-d8644e57abab?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGl2aW5nJTIwcm9vbSUyMGZ1cm5pdHVyZXxlbnwwfHwwfHx8MA%3D%3D')">
+                    <div class="category-overlay">
+                        <div>
+                            <h3>Living Room</h3>
+                            <p>32 Products</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-info">
+                    <h3>Living Room</h3>
+                    <p>Sofas, chairs, coffee tables</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRC2Rjw_PloBpds_5ieASjt74POf_RcoTfLMLRC2Yj5xdrwZONM-MtF5-5BEnyRoFkJ-SSOW4_wa1LQR9cDmHjfOjmWwQDNEXKSt6gcTQQ')">
+                    <div class="category-overlay">
+                        <div>
+                            <h3>Bedroom</h3>
+                            <p>28 Products</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-info">
+                    <h3>Bedroom</h3>
+                    <p>Beds, dressers, nightstands</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://images.pexels.com/photos/1957478/pexels-photo-1957478.jpeg')">
+                    <div class="category-overlay">
+                        <div>
+                            <h3>Office</h3>
+                            <p>24 Products</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-info">
+                    <h3>Office</h3>
+                    <p>Desks, chairs, storage</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://belfurniture.com/cdn/shop/files/1760493084_0_2048x.png?v=2784890517594709100')">
+                    <div class="category-overlay">
+                        <div>
+                            <h3>Dining</h3>
+                            <p>18 Products</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-info">
+                    <h3>Dining</h3>
+                    <p>Tables, chairs, sideboards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collection -->
+    <section id="featured" class="container">
+        <div class="section-header">
+            <h2>Featured Collection</h2>
+            <p>Handpicked pieces that exemplify craftsmanship and sophisticated design</p>
+        </div>
+        <div class="featured-grid">
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://ak1.ostkcdn.com/images/products/is/images/direct/fc0936db7990834274856fa2d5b94b68063b7974/Aurora-Velvet-Living-Room-Sofa.jpg?impolicy=medium')">
+                    <span class="product-badge">Bestseller</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Aurora Velvet Sofa</h3>
+                    <div class="product-price">$3,450</div>
+                    <p class="product-desc">Luxurious velvet upholstery with solid oak frame. Available in 4 colors.</p>
+                    <a href="#" class="btn btn-outline">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://www.eunicon.com.ng/cdn/shop/products/6-SITTER-CLASSICAL-DINING-SET-BLACK_2048x.jpg?v=1655845497')">
+                    <span class="product-badge">New</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Carrara Dining Table</h3>
+                    <div class="product-price">$2,890</div>
+                    <p class="product-desc">Italian marble top with brushed steel base. Seats 6-8 comfortably.</p>
+                    <a href="#" class="btn btn-outline">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTYVy3XGa59iwYFmo_OE92Snb8PqjWgXy9UfTyCOay59jOEpk-9_M-cPNFhFbSiaCSY5m0MIfLXL-WUNF7XDl5ncPxzTIhe5qO9-v-_X2RAYrr48LmzpbBQ')">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Harrison Leather Chair</h3>
+                    <div class="product-price">$1,650</div>
+                    <p class="product-desc">Top-grain leather with walnut frame. Ergonomic design for ultimate comfort.</p>
+                    <a href="#" class="btn btn-outline">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://akamai-scene7.frontgate.com/is/image/frontgate/164079_ESP_44BASEDOOR?$UPDP_hero$')">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Nordic Storage Cabinet</h3>
+                    <div class="product-price">$1,990</div>
+                    <p class="product-desc">Solid oak with minimalist design. Soft-close drawers and doors.</p>
+                    <a href="#" class="btn btn-outline">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTJ5-gG9NDuqFOZLUvt0j4O22wO6SEM4vPbWUg89AZrEsWExhFkbUD8_BZZBEv0pQy6gEnfFNLn8hTQDznxxzfpD6rIT31szpVXPidLNMArsQWNSm7AVC1bUQ0&usqp=CAc')">
+                    <span class="product-badge">Limited</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Serenity King Bed</h3>
+                    <div class="product-price">$4,250</div>
+                    <p class="product-desc">Upholstered headboard with integrated nightstands. Includes storage base.</p>
+                    <a href="#" class="btn btn-outline">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSjUYqogj_JX9t27yHyVTpk4cPBAu3HmyR06v_umWKAqnP127hxndwdLZYoYS9C84Z0Wo1sRmTExwoh2oPDvl_q13JuO0EO9RWAwhUQ3KCzT0qjHJ2WFsE1Ow')">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Arc Floor Lamp</h3>
+                    <div class="product-price">$890</div>
+                    <p class="product-desc">Brass finish with marble base. Adjustable height and dimmable LED.</p>
+                    <a href="#" class="btn btn-outline">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Room Inspiration -->
+    <section id="inspiration" class="container">
+        <div class="section-header">
+            <h2>Modern Room Inspiration</h2>
+            <p>Discover how our furniture transforms spaces into stunning interiors</p>
+        </div>
+        <div class="inspiration-grid">
+            <div class="inspiration-card">
+                <img src="https://assets.wfcdn.com/im/96463874/resize-h400-w400%5Ecompr-r85/1607/160762243/Askhat+22+-+Piece+Upholstered+Sectional.jpg" alt="Modern Living Room" class="inspiration-img">
+                <div class="inspiration-overlay">
+                    <h3>Minimalist Living</h3>
+                    <p>Clean lines and neutral tones create a serene living space</p>
+                    <a href="#" class="btn btn-outline">View Gallery</a>
+                </div>
+            </div>
+            <div class="inspiration-card">
+                <img src="https://assets.wfcdn.com/im/18715882/resize-h400-w400%5Ecompr-r85/2646/264657933/Aneekha+2+Piece+Bedroom+Set.jpg" alt="Luxury Bedroom" class="inspiration-img">
+                <div class="inspiration-overlay">
+                    <h3>Urban Sanctuary</h3>
+                    <p>Transform your bedroom into a luxurious retreat</p>
+                    <a href="#" class="btn btn-outline">View Gallery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Discover why designers and homeowners trust LUXE INTERIORS for their spaces</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The quality of furniture from LUXE INTERIORS is unmatched. Every piece feels like a work of art. My clients are always impressed with the selections I make from their collection.</p>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/person1/100/100.jpg" alt="Sarah Johnson" class="author-img">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Interior Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">I furnished my entire home with pieces from LUXE INTERIORS and couldn't be happier. The timeless designs and exceptional craftsmanship make every room feel special.</p>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/person2/100/100.jpg" alt="Michael Chen" class="author-img">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">As an architect, I appreciate the attention to detail and the sophisticated aesthetic of LUXE INTERIORS. Their pieces complement my designs perfectly.</p>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/person3/100/100.jpg" alt="Emma Williams" class="author-img">
+                        <div class="author-info">
+                            <h4>Emma Williams</h4>
+                            <p>Architect</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section id="newsletter" class="newsletter">
+        <div class="container">
+            <h2>Stay Inspired</h2>
+            <p>Subscribe to our newsletter for exclusive offers, new arrivals, and interior design inspiration</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">LUXE INTERIORS</div>
+                    <p class="footer-desc">Curating exceptional furniture for discerning clients who appreciate craftsmanship, quality, and timeless design.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Living Room</a></li>
+                        <li><a href="#">Bedroom</a></li>
+                        <li><a href="#">Dining Room</a></li>
+                        <li><a href="#">Office</a></li>
+                        <li><a href="#">Outdoor</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Craftsmanship</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping & Delivery</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LUXE INTERIORS. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            navMenu.style.position = 'absolute';
+            navMenu.style.top = '100%';
+            navMenu.style.left = '0';
+            navMenu.style.width = '100%';
+            navMenu.style.flexDirection = 'column';
+            navMenu.style.backgroundColor = 'white';
+            navMenu.style.padding = '20px';
+            navMenu.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        });
+
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            
+            // Create success message
+            const successMsg = document.createElement('div');
+            successMsg.textContent = 'Thank you for subscribing!';
+            successMsg.style.color = 'white';
+            successMsg.style.marginTop = '20px';
+            successMsg.style.fontSize = '1.1rem';
+            
+            // Reset form and display message
+            this.reset();
+            this.parentNode.appendChild(successMsg);
+            
+            // Remove message after 3 seconds
+            setTimeout(() => {
+                successMsg.remove();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
